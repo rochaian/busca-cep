@@ -20,5 +20,8 @@ Abra [http://localhost:3000] (http://localhost:3000) com seu navegador para ver 
 
 Teste o projeto clicando no link abaixo.
 
+https://busca-cep-three.vercel.app
 
-Desenvolvido por Ian Rocha | [http://localhost:3000] (Go Launch)
+
+
+Desenvolvido por Ian Rocha | Go Launch

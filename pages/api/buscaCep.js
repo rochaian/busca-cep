@@ -9,8 +9,13 @@ export default function handler(req, res) {
                 if(!!response.data.erro){
                     res.status(406).json({message: 'CEP Inválido'})
                 }else{
-                    console.log(response.data)
-                    res.status(200).json(response.data)
+                    res.status(200).json(
+                        {
+                        cep: response.data.cep,
+                        logradouro: response.data.logradouro,
+                        cidade: response.data.localidade,
+                        estado: response.data.uf,
+                        })
                 }
 
             })

@@ -66,9 +66,9 @@ function ResultCard({cepResult, hide}){
         <div style={{display: hide ? 'none': 'block'}} className={styles.resultCard}>
             {!!cepResult.message && <p style={{color:'red'}}><strong> {cepResult.message}</strong></p>}
             {!!cepResult.cep && <p><strong>CEP: </strong>{cepResult.cep}</p>}
-            {!!cepResult.cep && <p><strong>Estado: </strong>{cepResult.uf}</p>}
-           {!!cepResult.cep && <p><strong>Cidade: </strong>{cepResult.localidade}</p>}
-           {!!cepResult.cep && <p><strong>Logradouro: </strong>{cepResult.logradouro}</p>}
+            {!!cepResult.estado && <p><strong>Estado: </strong>{cepResult.estado}</p>}
+           {!!cepResult.cidade && <p><strong>Cidade: </strong>{cepResult.cidade}</p>}
+           {!!cepResult.logradouro && <p><strong>Logradouro: </strong>{cepResult.logradouro}</p>}
         </div>
     )
 }

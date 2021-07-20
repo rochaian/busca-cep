@@ -1,6 +1,6 @@
 .container {
     padding: 0rem;
-    margin: 4rem 0;
+    margin: 10rem 0;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -10,6 +10,7 @@
     .title {
         margin: 0;
         line-height: 1.15;
+        font-weight: bold;
         font-size: 2rem;
         color: black;
         font-family:  Oxygen,Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;

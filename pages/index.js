@@ -46,7 +46,7 @@ export default function Home(){
     <>
      <div className={styles.container}>
          <div className={styles.title}>
-             Buscar CEP by Ian
+             BUSCAR CEP
          </div>
 
          <div className={styles.card}>
@@ -57,6 +57,8 @@ export default function Home(){
          </div>
 
         <ResultCard hide={hideResult} cepResult={cepResult} />
+
+        <Footer/>
          
        
      </div>
@@ -74,4 +76,8 @@ function ResultCard({cepResult, hide}){
            {!!cepResult.cep && <p><strong>Logradouro: </strong>{cepResult.logradouro}</p>}
         </div>
     )
+}
+
+function Footer(){
+    return <div> Feito por Ian Rocha | <a href="https://golaunch.com.br">Go Launch</a> </div>
 }

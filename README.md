@@ -13,7 +13,7 @@ npm run dev
 yarn dev
 ```
 
-Abra [http://localhost: 3000] (http://localhost: 3000) com seu navegador para ver o resultado.
+Abra [http://localhost:3000] (http://localhost:3000) com seu navegador para ver o resultado.
 
 
 ## Demo
@@ -21,4 +21,4 @@ Abra [http://localhost: 3000] (http://localhost: 3000) com seu navegador para ve
 Teste o projeto clicando no link abaixo.
 
 
-Desenvolvido por Ian Rocha | [http://localhost: 3000] (Go Launch)
+Desenvolvido por Ian Rocha | [http://localhost:3000] (Go Launch)

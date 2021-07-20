@@ -22,11 +22,9 @@ export default function Home(){
     
                 if(!!response.data.erro){
                     setCepResult({message: 'CEP Inválido'});
-                    // response.status(406).json({message: 'CEP Inválido'})
                 }else{
                     console.log(response.data);
                     setCepResult(response.data);
-                    // response.status(200).json({cep: response.data})
                 }
                 
             })
@@ -34,27 +32,14 @@ export default function Home(){
               console.error("ops! ocorreu um erro" + err);
       
            });
-
-    //     axios.post('/api/buscaCep', {cep: cep})
-    //     .then((response) => {
-    //         console.log(response)
-    //         resolve();
-    //     })
-    //     .catch((err) => {
-    //       console.error("ops! ocorreu um erro" + err);
-    //       resolve();
-    //    });
     
       }
 
       const handleCep = (value) => {
-        // console.log(value);
         setCep(value);
         if(value.length<8){
             setHideResult(true);
         }
-        // console.log(cep.length)
-        // console.log(value);
       }
 
     return(
@@ -63,13 +48,12 @@ export default function Home(){
          <div className={styles.title}>
              Buscar CEP by Ian
          </div>
-         <div className={styles.card}>
 
+         <div className={styles.card}>
             <form onSubmit={onBuscarCep}>
                 <NumberFormat onValueChange={(e) => handleCep(e.value)} id="cep" className={styles.inputCep} format="#####-###" mask="_" placeholder="0000-000"  />
                 <button disabled={cep.length==8 ? false : true} type="submit" className={styles.button} >Buscar CEP</button>
             </form>
-
          </div>
 
         <ResultCard hide={hideResult} cepResult={cepResult} />
@@ -82,7 +66,7 @@ export default function Home(){
 
 function ResultCard({cepResult, hide}){
     return(
-        <div style={{display: hide ? 'none': 'block'}} className={styles.card}>
+        <div style={{display: hide ? 'none': 'block'}} className={styles.resultCard}>
             {!!cepResult.message && <p><strong> {cepResult.message}</strong></p>}
             {!!cepResult.cep && <p><strong>CEP: </strong>{cepResult.cep}</p>}
             {!!cepResult.cep && <p><strong>Estado: </strong>{cepResult.uf}</p>}

@@ -15,24 +15,19 @@ export default function Home(){
     const onBuscarCep = async event => {
         event.preventDefault()
 
-        axios.get(`https://viacep.com.br/ws/${cep}/json/`)
-            .then((response) => {
-
-                setHideResult(false);
-    
-                if(!!response.data.erro){
-                    setCepResult({message: 'CEP Inválido'});
-                }else{
-                    console.log(response.data);
-                    setCepResult(response.data);
-                }
-                
+        axios.post(`/api/buscaCep`, {cep: cep})
+            .then((response) => {         
+                setHideResult(false);   
+                setCepResult(response.data);
             })
             .catch((err) => {
-              console.error("ops! ocorreu um erro" + err);
-      
+                if(err.response.status == 406){
+                    setHideResult(false);
+                    setCepResult({message: 'CEP Inválido'});
+                }else{
+                    console.error("ops! ocorreu um erro" + err);
+                }
            });
-    
       }
 
       const handleCep = (value) => {
@@ -69,7 +64,7 @@ export default function Home(){
 function ResultCard({cepResult, hide}){
     return(
         <div style={{display: hide ? 'none': 'block'}} className={styles.resultCard}>
-            {!!cepResult.message && <p><strong> {cepResult.message}</strong></p>}
+            {!!cepResult.message && <p style={{color:'red'}}><strong> {cepResult.message}</strong></p>}
             {!!cepResult.cep && <p><strong>CEP: </strong>{cepResult.cep}</p>}
             {!!cepResult.cep && <p><strong>Estado: </strong>{cepResult.uf}</p>}
            {!!cepResult.cep && <p><strong>Cidade: </strong>{cepResult.localidade}</p>}

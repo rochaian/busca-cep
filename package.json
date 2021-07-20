@@ -9,9 +9,13 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "axios": "^0.21.1",
+    "i": "^0.3.6",
     "next": "11.0.1",
+    "npm": "^7.20.0",
     "react": "17.0.2",
-    "react-dom": "17.0.2"
+    "react-dom": "17.0.2",
+    "react-number-format": "^4.6.4"
   },
   "devDependencies": {
     "eslint": "7.31.0",
